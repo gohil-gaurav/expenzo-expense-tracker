@@ -1,0 +1,41 @@
+{% extends 'expenses/base.html' %}
+
+{% block content %}
+
+<h3 class="mb-4">Dashboard</h3>
+
+<div class="row g-4">
+    <div class="col-md-4">
+        <div class="card shadow-sm bg-success text-white">
+            <div class="card-body">
+                <h6>Total Income</h6>
+                <h2>₹ {{ total_income }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm bg-danger text-white">
+            <div class="card-body">
+                <h6>Total Expense</h6>
+                <h2>₹ {{ total_expense }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm bg-primary text-white">
+            <div class="card-body">
+                <h6>Balance</h6>
+                <h2>₹ {{ balance }}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a href="{% url 'add_expense' %}" class="btn btn-primary me-2">➕ Add Transaction</a>
+    <a href="{% url 'expense_list' %}" class="btn btn-outline-secondary">📄 View Transactions</a>
+</div>
+
+{% endblock %}

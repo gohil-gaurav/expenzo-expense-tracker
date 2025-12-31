@@ -1,0 +1,48 @@
+{% extends 'expenses/base.html' %}
+{% block content %}
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="card auth-card shadow-lg">
+        <div class="card-body p-4">
+
+            <h3 class="text-center mb-2">Welcome Back 👋</h3>
+            <p class="text-center text-muted mb-4">
+                Login to manage your expenses
+            </p>
+
+            <form method="post">
+                {% csrf_token %}
+
+                {% if form.non_field_errors %}
+                    <div class="alert alert-danger">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
+
+                <!-- Username -->
+                <div class="form-group mb-3">
+                    <label class="form-label">Username</label>
+                    {{ form.username }}
+                </div>
+
+                <!-- Password -->
+                <div class="form-group mb-3">
+                    <label class="form-label">Password</label>
+                    {{ form.password }}
+                </div>
+
+                <button class="btn btn-primary w-100 mt-2">
+                    Login
+                </button>
+            </form>
+
+            <p class="text-center mt-3 small">
+                Don’t have an account?
+                <a href="{% url 'signup' %}">Create one</a>
+            </p>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
