@@ -34,13 +34,15 @@ a:hover {
 .card {
     background-color: #020617;
     border-radius: 14px;
-    border: 1px solid #1e293b;
+    /* border: 1px solid #1e293b; */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: radial-gradient(circle at top, #020617, #020617);
+    border: 1px solid rgba(255,255,255,0.06);
 }
 
 .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    box-shadow: 0 0 25px rgba(59,130,246,0.15);
 }
 
 /* ===============================
@@ -259,4 +261,46 @@ small {
 .hero-subtitle {
     color: #cbd5e1;
     font-size: 1rem;
+}
+/* === TRANSACTIONS TABLE === */
+.transaction-card {
+    background: #020617;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.table-dark {
+    --bs-table-bg: transparent;
+    --bs-table-border-color: rgba(255,255,255,0.05);
+}
+
+.table-dark thead th {
+    color: #e5e7eb;
+    font-weight: 600;
+    background: rgba(255,255,255,0.04);
+}
+
+.table-dark td {
+    color: #cbd5f5;
+    vertical-align: middle;
+}
+
+/* === FILTER CARD === */
+.filter-card {
+    background: radial-gradient(circle at top, #020617, #020617);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+}
+
+/* === BUTTON POLISH === */
+.btn-outline-primary,
+.btn-outline-danger {
+    border-radius: 10px;
+}
+
+/* === BADGES === */
+.badge {
+    font-weight: 500;
+    border-radius: 999px;
 }

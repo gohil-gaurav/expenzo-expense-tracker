@@ -1,9 +1,13 @@
-{% extends 'expenses/base.html' %}
+{% extends 'expenses/base.html' %} 
+{% load static %}
 
 {% block content %}
 
 <h3 class="mb-4">Dashboard</h3>
 
+
+
+<!-- Summary Cards -->
 <div class="row g-4">
     <div class="col-md-4">
         <div class="card shadow-sm bg-success text-white">
@@ -33,9 +37,51 @@
     </div>
 </div>
 
+<!-- Action Buttons -->
 <div class="mt-4">
-    <a href="{% url 'add_expense' %}" class="btn btn-primary me-2">➕ Add Transaction</a>
-    <a href="{% url 'expense_list' %}" class="btn btn-outline-secondary">📄 View Transactions</a>
+    <a href="{% url 'add_expense' %}" class="btn btn-primary me-2">
+        ➕ Add Transaction
+    </a>
+    <a href="{% url 'expense_list' %}" class="btn btn-outline-secondary">
+        📄 View Transactions
+    </a>
 </div>
+
+<!-- Charts Section -->
+<div class="row mt-5 g-4">
+    <div class="col-md-6">
+        <div class="card shadow-sm p-3">
+            <h6 class="mb-3 text-light fw-semibold">
+                Expenses by Category
+            </h6>
+            <div style="height:280px;">
+                <canvas id="categoryChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card shadow-sm p-3">
+            <h6 class="mb-3 text-light fw-semibold">
+                Monthly Expenses
+            </h6>
+            <div style="height:280px;">
+                <canvas id="monthlyChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= CHART DATA ================= -->
+<script>
+    const categoryLabels = {{ category_labels|safe }};
+    const categoryTotals = {{ category_totals|safe }};
+    const monthLabels = {{ month_labels|safe }};
+    const monthTotals = {{ month_totals|safe }};
+</script>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{% static 'expenses/js/charts.js' %}"></script>
 
 {% endblock %}
