@@ -27,7 +27,12 @@ SECRET_KEY = 'django-insecure-rp0i9k5=mek_u@%0jk6rtzmsh0wwy#j$0z8sgs4v=!3p6)9qt$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'expenzo-wvni.onrender.com',
+    'localhost',
+    '127.0.0.1',
+]
+
 
 
 # Application definition
