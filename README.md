@@ -2,6 +2,8 @@
 
 Expenzo is a Django-based expense tracker that helps users manage income and expenses securely with a modern dark UI.
 
+https://expenzo-wvni.onrender.com
+
 ## 🚀 Features
 - User authentication (Login / Signup)
 - Public landing page
