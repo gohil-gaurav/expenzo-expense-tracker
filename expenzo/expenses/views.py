@@ -9,6 +9,18 @@ from django.db.models import Sum
 from .forms import CustomSignupForm
 from datetime import datetime
 from django.db.models.functions import TruncMonth
+from django.contrib.auth.models import User
+from django.http import HttpResponse
+
+def create_admin(request):
+    if not User.objects.filter(username="admin").exists():
+        User.objects.create_superuser(
+            username="admin",
+            email="admin@example.com",
+            password="Admin@123"
+        )
+        return HttpResponse("Superuser created")
+    return HttpResponse("Superuser already exists")
 
 
 # Create your views here.
