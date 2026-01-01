@@ -9,8 +9,6 @@ from django.db.models import Sum
 from .forms import CustomSignupForm
 from datetime import datetime
 from django.db.models.functions import TruncMonth
-from django.contrib.auth.models import User
-from django.http import HttpResponse
 
 
 
